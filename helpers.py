@@ -11,7 +11,7 @@ from conf import REQUEST_TIMEOUT, logging, REQUEST_EXCEPTIONS, IMAGES_TYPES, IMA
 class Counter:
     """Подсчет статистики для отображения прогресса выполнения задач"""
     done_tasks = 0
-    skipped_task = 0
+    skipped_tasks = 0
 
     def __init__(self, total_tasks):
         self.total_tasks = total_tasks
@@ -22,11 +22,11 @@ class Counter:
         if greenlet.value is not None:
             self.done_tasks += 1
         else:
-            self.skipped_task += 1
+            self.skipped_tasks += 1
 
         message = '{} of {} image(s) downloaded (skipped {})'.format(self.done_tasks,
                                                                      self.total_tasks,
-                                                                     self.skipped_task)
+                                                                     self.skipped_tasks)
         print(message)
         logging.info(message)
 

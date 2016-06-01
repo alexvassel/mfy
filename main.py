@@ -69,6 +69,6 @@ if __name__ == '__main__':
 
     print('\nTotal images - {}, downloaded - {}, skipped - {}'.format(total_images,
                                                                       counter.done_tasks,
-                                                                      counter.skipped_task))
+                                                                      counter.skipped_tasks))
 
     logging.info('Finished working with {}\n'.format(base_url.geturl()))
